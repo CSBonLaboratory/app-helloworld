@@ -5,14 +5,10 @@ unikraft:
   version: stable
 targets:
   - architecture: x86_64
-    platform: linuxu
-  - architecture: x86_64
-    platform: kvm
-  - architecture: x86_64
-    platform: xen
+    platform: qemu
   - architecture: arm64
-    platform: linuxu
+    platform: qemu
+  - architecture: x86_64
+    platform: firecracker
   - architecture: arm64
-    platform: kvm
-  - architecture: arm
-    platform: linuxu
+    platform: firecracker
