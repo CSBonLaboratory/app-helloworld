@@ -39,13 +39,11 @@ int main(int argc, char *argv[])
 
 	printf("Hello world!\n");
 
-#ifdef COV_PRE
 	struct something a[10];
-
+	printf("aaaaaa\n");
 	struct something p  = {.val = 6, .s = 'a', .val1 = 8};
 
 	a[11] = p;
-#endif
 
 #if CONFIG_APPHELLOWORLD_PRINTARGS
 	printf("Arguments: ");
