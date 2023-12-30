@@ -1,6 +1,6 @@
-UK_ROOT ?= $(PWD)/workdir/unikraft
-UK_LIBS ?= $(PWD)/workdir/libs
-UK_BUILD ?= $(PWD)/workdir/build
+UK_ROOT ?= $(PWD)/unikraft
+UK_LIBS ?= $(PWD)/libs
+UK_BUILD ?= $(PWD)/build
 LIBS :=
 
 all:

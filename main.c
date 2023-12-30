@@ -1,14 +1,17 @@
 #include <stdio.h>
-
+#include <string.h>
 /* Import user configuration: */
 #ifdef __Unikraft__
 #include <uk/config.h>
+
 #endif /* __Unikraft__ */
 
+#include <uk/print.h>
 #if CONFIG_APPHELLOWORLD_SPINNER
 #include <time.h>
 #include <errno.h>
 #include "monkey.h"
+
 
 static void millisleep(unsigned int millisec)
 {
@@ -23,6 +26,11 @@ static void millisleep(unsigned int millisec)
 }
 #endif /* CONFIG_APPHELLOWORLD_SPINNER */
 
+struct something{
+	int val;
+	char s;
+	int val1;
+};
 int main(int argc, char *argv[])
 {
 #if CONFIG_APPHELLOWORLD_PRINTARGS || CONFIG_APPHELLOWORLD_SPINNER
@@ -30,6 +38,14 @@ int main(int argc, char *argv[])
 #endif
 
 	printf("Hello world!\n");
+
+#ifdef COV_PRE
+	struct something a[10];
+
+	struct something p  = {.val = 6, .s = 'a', .val1 = 8};
+
+	a[11] = p;
+#endif
 
 #if CONFIG_APPHELLOWORLD_PRINTARGS
 	printf("Arguments: ");
