@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
 	int i;
 #endif
 
+#if CONFIG_APPHELLOWORLD_COV == 1
 	printf("Hello world!\n");
 
 	struct something a[10];
@@ -44,6 +45,7 @@ int main(int argc, char *argv[])
 	struct something p  = {.val = 6, .s = 'a', .val1 = 8};
 
 	a[11] = p;
+#endif
 
 #if CONFIG_APPHELLOWORLD_PRINTARGS
 	printf("Arguments: ");

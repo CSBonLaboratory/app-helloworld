@@ -4,6 +4,12 @@ config APPHELLOWORLD_DEPENDENCIES
 	default y
 	select LIBNOLIBC if !HAVE_LIBC
 
+config APPHELLOWORLD_COV
+	bool "Test Coverity preprocess"
+	default n
+	help
+		Test Coverity preprocess analysis
+
 ### App configuration
 config APPHELLOWORLD_PRINTARGS
 	bool "Print arguments"
