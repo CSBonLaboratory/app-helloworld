@@ -31,6 +31,16 @@ struct something{
 	char s;
 	int val1;
 };
+
+void try_dead_code_coverity(){
+	struct something a[10];
+	printf("aaaaaa\n");
+	struct something p  = {.val = 4, .s = '4', .val1 = 4};
+
+	a[10] = p;
+}
+
+
 int main(int argc, char *argv[])
 {
 #if CONFIG_APPHELLOWORLD_PRINTARGS || CONFIG_APPHELLOWORLD_SPINNER
